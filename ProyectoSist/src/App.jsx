@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import Navbar from './components/navbar/Navbar'
 import './App.css'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="PsyApp">
       <div>
-      
+        <Navbar/>
       </div>
       <h1>PsyApp</h1>
       <div className="card">
@@ -17,7 +18,7 @@ function App() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 export default App

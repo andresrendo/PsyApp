@@ -1,3 +1,19 @@
-.navbar{
-  background: rgb(153, 71, 71);
+.App {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: rgba(219, 234, 233, 1);
+}
+
+footer {
+  position: fixed;
+  background-color: rgba(116, 198, 157, 1);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+TopNav{
+  background-color: rgba(116, 198, 157, 1);
 }

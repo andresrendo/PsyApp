@@ -4,6 +4,8 @@ import TopNav from "./components/navbar/TopNav.jsx";
 import "./App.css";
 import DoctorCard from "./components/DoctorCard/DoctorCard";
 import Carrusel from "./components/carousel/carousel.jsx";
+import Footer from "./components/footer/footer";
+
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -31,8 +33,9 @@ function App() {
   return (
     <div className="PsyApp">
       <div>
-        <TopNav />
+        <TopNav/>
       </div>
+      <Footer/>
     </div>
   );
 }

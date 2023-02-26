@@ -1,0 +1,20 @@
+.card{
+    width: 350px;
+    height: 440px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 20px;
+}
+.imageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+.nombre{
+    text-align: center;
+}
+
+

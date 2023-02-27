@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import TopNav from './components/navbar/TopNav.jsx'
-import './App.css'
+import styles from './App.css'
+import Landing from './pages/LandingPage/Landing';
+
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className="PsyApp">
-      <div>
-        <h1>Este es el landing page</h1>
-      </div>
-    </div>
+    <Landing/>
   );
 }
 

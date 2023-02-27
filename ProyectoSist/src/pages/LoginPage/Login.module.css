@@ -1,0 +1,8 @@
+h2 {
+    color: #0E4A67;
+}
+
+#imagen {
+    width: 200px; 
+    object-fit: cover;   
+}

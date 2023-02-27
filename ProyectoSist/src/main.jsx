@@ -7,7 +7,6 @@ import { Register } from "./pages/RegisterPage/Register"
 import { Layout } from './components/Layout/Layout';
 import { HOME_URL, LOGIN_URL, REGISTER_URL } from './constants/urls';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

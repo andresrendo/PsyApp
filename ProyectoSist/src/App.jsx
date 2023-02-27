@@ -9,9 +9,8 @@ function App() {
   return (
     <div className="PsyApp">
       <div>
-        <TopNav/>
+        <h1>Este es el landing page</h1>
       </div>
-      
     </div>
   );
 }

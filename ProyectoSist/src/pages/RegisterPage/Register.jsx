@@ -1,7 +1,13 @@
 import { LOGIN_URL } from "../../constants/urls";
+import { signInWithGoogle } from "../../firebase/auth-service";
 import styles from "./Register.module.css"
 
 export const Register = () => {
+
+    const handleSignWithGoogle = async () => {
+        await signInWithGoogle()
+    };
+
     return(
         <div className='d-flex justify-content-evenly flex-wrap'>
             <div className='d-flex align-items-center'>
@@ -48,6 +54,7 @@ export const Register = () => {
                     <div className="d-flex justify-content-center">
                         <button type="submit" className={`btn btn-primary py-2 ${styles.registerButton}`}>Registrarse</button>
                     </div>
+                    <button type="button" onClick={handleSignWithGoogle} className="btn btn-secondary">Registrate con Google</button>
                     
                 </form>                    
             </div>

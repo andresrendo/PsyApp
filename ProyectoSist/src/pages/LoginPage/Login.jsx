@@ -13,7 +13,8 @@ export const Login = () => {
                 <img src="https://clinicavicent.com/wp-content/uploads/2021/06/psicologia-educativa-1.png" className={styles.image} />
             </div>
 
-            <div>
+
+            <div className='pt-5'>
                 {/* <Link to={REGISTER_URL}>¿No tienes cuenta?{" "} <span>Registrate</span></Link> */}
                 <a href={REGISTER_URL}>¿No tienes cuenta?{" "} <span>Registrate</span></a>
                 <h2>Iniciar sesión</h2>
@@ -28,7 +29,9 @@ export const Login = () => {
                     </div>
                     <button type="submit" className={`btn btn-primary ${styles.button1}`}>Iniciar</button>
                 </form>
-                    <button type="button" onClick={handleSignWithGoogle} className="btn btn-secondary">Continuar con Google</button>
+
+                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary pb-2 ${styles.button2}`}>Continuar con Google</button>
+
             </div>
         </div>
     )

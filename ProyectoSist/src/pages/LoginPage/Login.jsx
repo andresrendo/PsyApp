@@ -2,6 +2,11 @@ import styles from './Login.module.css'
 import { REGISTER_URL } from '../../constants/urls'
 
 export const Login = () => {
+
+    const handleSignWithGoogle = async () => {
+        await signInWithGoogle()
+    };
+
     return(
         <div className='d-flex justify-content-evenly flex-wrap'>
             <div className='img-container'>
@@ -23,7 +28,7 @@ export const Login = () => {
                     </div>
                     <button type="submit" className={`btn btn-primary ${styles.button1}`}>Iniciar</button>
                 </form>
-                    <button type="submit" className="btn btn-secondary">Continuar con Google</button>
+                    <button type="button" onClick={handleSignWithGoogle} className="btn btn-secondary">Continuar con Google</button>
             </div>
         </div>
     )

@@ -9,7 +9,8 @@ export const Login = () => {
             </div>
 
             <div>
-                <p>¿No tienes cuenta? <a href={REGISTER_URL}>Registrate aqui</a></p>
+                {/* <Link to={REGISTER_URL}>¿No tienes cuenta?{" "} <span>Registrate</span></Link> */}
+                <a href={REGISTER_URL}>¿No tienes cuenta?{" "} <span>Registrate</span></a>
                 <h2>Iniciar sesión</h2>
                 <form>
                     <div className="mb-3">

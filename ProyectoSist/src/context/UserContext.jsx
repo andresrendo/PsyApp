@@ -24,6 +24,8 @@ export function UserContextProvider({children}){
                     name: firebaseUser.displayName,
                     email: firebaseUser.email,
                 });
+            } else{
+                setUser(null);
             }
         })
         

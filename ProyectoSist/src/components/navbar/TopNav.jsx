@@ -4,10 +4,16 @@ import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'
 import { useUser } from '../../context/UserContext';
+import { logout } from '../../firebase/auth-service.js';
 
 
 function TopNav() {
     const { user } = useUser();
+
+    const handleLogout = async () => {
+      console.log('logout');
+      await logout();
+    };
 
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbarColor}`} >
@@ -39,9 +45,20 @@ function TopNav() {
               <li className="nav-item">
                 <a className="nav-link" href="#">Contacto</a>
               </li>
-              <Link to={LOGIN_URL}>
-                <button className={`btn btn-outline-success ${styles.logInButton}`} type="submit" >Iniciar sesión</button>
-              </Link>
+
+
+              {!!user && (
+                <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
+              )}
+
+
+              {!user && (
+                <Link to={LOGIN_URL}>
+                  <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
+                </Link>
+              )}
+                
+
             </ul>
           </div>
 

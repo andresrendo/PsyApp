@@ -10,12 +10,12 @@ import Button from 'react-bootstrap/Button';
 
 function TopNav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-success">
+    <nav className={`navbar navbar-expand-lg ${styles.navbarColor}`} >
       <div className="container-fluid main-container">
 
-        <div className="left-side-navbar">
+        <div className="left-side-navbar" >
           <a className="navbar-brand" href={HOME_URL}>
-            <img src="https://w7.pngwing.com/pngs/3/863/png-transparent-yoga-vriksasana-meditating-physical-fitness-arm-sports.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
+            <img src="https://o.remove.bg/downloads/19a57368-6fd6-4f82-baa5-dffb9373d12a/png-transparent-yoga-vriksasana-meditating-physical-fitness-arm-sports-removebg-preview.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top me-2"/>
             PsyApp
           </a>
         </div>
@@ -40,7 +40,7 @@ function TopNav() {
                 <a className="nav-link" href="#">Contacto</a>
               </li>
               <Link to={LOGIN_URL}>
-                <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
+                <button className={`btn btn-outline-success ${styles.logInButton}`} type="submit" >Iniciar sesión</button>
               </Link>
             </ul>
           </div>

@@ -11,7 +11,7 @@ function TopNav() {
     const { user } = useUser();
 
     const handleLogout = async () => {
-      console.log('logout');
+      console.log(user);
       await logout();
     };
 
@@ -47,12 +47,12 @@ function TopNav() {
               </li>
 
 
-              {!!user && (
+              {user.name != null && (
                 <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
               )}
 
 
-              {!user && (
+              {user.name === null && (
                 <Link to={LOGIN_URL}>
                   <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
                 </Link>

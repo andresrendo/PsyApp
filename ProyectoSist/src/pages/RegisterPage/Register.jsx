@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { LOGIN_URL } from "../../constants/urls";
-import { signInWithGoogle } from "../../firebase/auth-service";
+import { registerwithemailandpassword, signInWithGoogle } from "../../firebase/auth-service";
 import styles from "./Register.module.css"
 
 export const Register = () => {
 
-    const [] = useState({
+    const [formData, setFormData] = useState({
         name: null,
         email: null,
         password: null,
@@ -22,6 +23,7 @@ export const Register = () => {
     const onSubmit = async(event) => {
         event.preventDefault()
         console.log(formData)
+        await registerwithemailandpassword(formData.email, formData.password)
     }
 
     return(
@@ -37,38 +39,38 @@ export const Register = () => {
                 <form className={styles.formFormat}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="InputName" name="name"/>
+                        <input type="text" className="form-control" id="InputName" name="name" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Apellido</label>
-                        <input type="text" className="form-control" id="InputName" name="lastName"/>
+                        <input type="text" className="form-control" id="InputLastName" name="lastName" onChange={handleOnChange}/>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp"/>
+                        <input type="email" className="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
-                        <input type="password" className="form-control" id="InputPassword1" name="password"/>
+                        <input type="password" className="form-control" id="InputPassword1" name="password" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Confirmar contraseña</label>
-                        <input type="password" className="form-control" id="InputPassword1"/>
+                        <input type="password" className="form-control" id="InputPassword2" name="check_password" onChange={handleOnChange}/>
                     </div>
                     
-                    <div class="input-group mb-3 d-flex justify-content-evenly">
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
+                    <div className="input-group mb-3 d-flex justify-content-evenly">
+                        <div className="input-group-text">
+                            <input className="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" name="pacient" onChange={handleOnChange}/>
                             <label className="ms-1">Paciente</label>
                         </div>
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" />
+                        <div className="input-group-text">
+                            <input className="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" name="doctor" onChange={handleOnChange}/>
                             <label className="ms-1">Doctor</label>
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button type="submit" className={`btn btn-primary py-2 ${styles.registerButton}`}>Registrarse</button>
+                        <button type="submit" onClick={onSubmit} className={`btn btn-primary py-2 ${styles.registerButton}`}>Registrarse</button>
                     </div>
                     <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary mt-2 py-2 mb-5 ${styles.button2}`}>Registrate con Google</button>
                     

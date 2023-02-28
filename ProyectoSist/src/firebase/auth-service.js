@@ -9,7 +9,7 @@ export const signInWithGoogle = async () => {
     }
 }
 
-export const registerwithemailandpassword = async () => {
+export const registerwithemailandpassword = async (email, password) => {
     try {
         const result = await createUserWithEmailAndPassword(auth, email, password);
         return result;

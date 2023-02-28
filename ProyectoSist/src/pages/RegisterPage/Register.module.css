@@ -1,0 +1,16 @@
+body {
+    background-color: #b2ffd9;
+}
+
+.image {
+    width: 350px;
+    object-fit: cover;
+}
+
+.formFormat  {
+    width: 350px;
+}
+
+.registerButton {
+    width: 350px;
+}

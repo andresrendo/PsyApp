@@ -6,3 +6,12 @@ h2 {
     width: 200px; 
     object-fit: cover;   
 }
+
+.image {
+    width: 400px;
+    object-fit: cover;
+}
+
+.button1 {
+    background-color: red;
+}

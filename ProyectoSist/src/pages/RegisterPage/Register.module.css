@@ -3,14 +3,25 @@ body {
 }
 
 .image {
-    width: 350px;
+    width: 380px;
     object-fit: cover;
 }
 
 .formFormat  {
-    width: 350px;
+    width: 380px;
 }
 
 .registerButton {
-    width: 350px;
+    width: 380px;
+    background-color: #8D4C98;
+}
+
+.anchor {
+    color: #FB724C;
+}
+
+.button2 {
+    background-color: white;
+    width: 380px;
+    color: black;
 }

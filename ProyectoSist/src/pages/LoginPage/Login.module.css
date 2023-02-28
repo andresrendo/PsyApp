@@ -23,7 +23,9 @@ h2 {
 .button2 {
     background-color: white;
     width: 380px;
-    height: 30px;
     color: black;
-    padding-bottom: 10px;
+}
+
+.anchor {
+    color: #FB724C;
 }

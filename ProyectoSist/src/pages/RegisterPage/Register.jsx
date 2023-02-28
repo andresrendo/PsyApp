@@ -16,7 +16,7 @@ export const Register = () => {
 
             <div className="pt-5 px-3">
                 <h2>Registrarse</h2>
-                <p>¿Ya tienes una cuenta? <a href={LOGIN_URL}>Accede aqui</a></p>
+                <p>¿Ya tienes una cuenta? <a href={LOGIN_URL} className={styles.anchor}>Accede aqui</a></p>
                 
                 <form className={styles.formFormat}>
                     <div className="mb-3">
@@ -54,7 +54,7 @@ export const Register = () => {
                     <div className="d-flex justify-content-center">
                         <button type="submit" className={`btn btn-primary py-2 ${styles.registerButton}`}>Registrarse</button>
                     </div>
-                    <button type="button" onClick={handleSignWithGoogle} className="btn btn-secondary">Registrate con Google</button>
+                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary mt-2 py-2 mb-5 ${styles.button2}`}>Registrate con Google</button>
                     
                 </form>                    
             </div>

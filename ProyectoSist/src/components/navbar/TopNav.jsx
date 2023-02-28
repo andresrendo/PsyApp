@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import { LOGIN_URL, HOME_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import  logo_pic from './../../assets/logo.png'
 import { useUser } from '../../context/UserContext';
 
 
@@ -18,7 +15,7 @@ function TopNav() {
 
         <div className="left-side-navbar" >
           <a className="navbar-brand" href={HOME_URL}>
-            <img src="https://o.remove.bg/downloads/19a57368-6fd6-4f82-baa5-dffb9373d12a/png-transparent-yoga-vriksasana-meditating-physical-fitness-arm-sports-removebg-preview.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top me-2"/>
+            <img src={logo_pic} alt="Logo" width="30" height="30" className="d-inline-block align-text-top me-2"/>
             PsyApp
           </a>
         </div>

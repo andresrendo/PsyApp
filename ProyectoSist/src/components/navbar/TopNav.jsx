@@ -6,9 +6,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+import { useUser } from '../../context/UserContext';
 
 
 function TopNav() {
+    const { user } = useUser();
+
   return (
     <nav className={`navbar navbar-expand-lg ${styles.navbarColor}`} >
       <div className="container-fluid main-container">

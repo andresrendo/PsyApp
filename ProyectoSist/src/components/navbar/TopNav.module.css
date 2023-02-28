@@ -1,3 +1,8 @@
-.navbar-color {
-    background-color: red;
+.navbarColor {
+    background-color: #70B196;
+}
+
+.logInButton {
+    background-color: #8D4C98;
+    color: white;
 }

@@ -4,9 +4,25 @@ import styles from "./Register.module.css"
 
 export const Register = () => {
 
+    const [] = useState({
+        name: null,
+        email: null,
+        password: null,
+    });
+
     const handleSignWithGoogle = async () => {
         await signInWithGoogle()
     };
+
+    const handleOnChange = (event) => {
+        const {name, value} = event.target;
+        setFormData({...formData, [name]: value})
+    }
+
+    const onSubmit = async(event) => {
+        event.preventDefault()
+        console.log(formData)
+    }
 
     return(
         <div className='d-flex justify-content-evenly flex-wrap'>
@@ -21,20 +37,20 @@ export const Register = () => {
                 <form className={styles.formFormat}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="InputName"/>
+                        <input type="text" className="form-control" id="InputName" name="name"/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Apellido</label>
-                        <input type="text" className="form-control" id="InputName"/>
+                        <input type="text" className="form-control" id="InputName" name="lastName"/>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className="form-control" id="InputEmail1" aria-describedby="emailHelp"/>
+                        <input type="email" className="form-control" id="InputEmail1" name="email" aria-describedby="emailHelp"/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
-                        <input type="password" className="form-control" id="InputPassword1"/>
+                        <input type="password" className="form-control" id="InputPassword1" name="password"/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Confirmar contraseña</label>

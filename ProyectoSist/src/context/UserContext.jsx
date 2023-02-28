@@ -1,6 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import React, {useContext, createContext, useEffect, useState} from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/config';
 
 export const UserContext = createContext({
@@ -24,6 +23,8 @@ export function UserContextProvider({children}){
                     name: firebaseUser.displayName,
                     email: firebaseUser.email,
                 });
+            } else{
+                setUser(null);
             }
         })
         

@@ -8,7 +8,7 @@ export const Login = () => {
                 <img src="https://clinicavicent.com/wp-content/uploads/2021/06/psicologia-educativa-1.png" className={styles.image} />
             </div>
 
-            <div>
+            <div className='pt-5 px-3'>
                 <p>¿No tienes cuenta? <a href={REGISTER_URL}>Registrate aqui</a></p>
                 <h2>Iniciar sesión</h2>
                 <form>

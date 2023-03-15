@@ -1,11 +1,43 @@
-import styles from './Login.module.css'
+import styles from "./Login.module.css"
 import { REGISTER_URL } from '../../constants/urls'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { loginWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth/index";
+
 
 export const Login = () => {
+    const navigate = useNavigate();
+
+    const [formData, setFormData]= useState({
+        email: "",
+        password: "",
+      })
+
+    const onSubmit = async (event) => {
+        try{
+            event.preventDefault();
+            const {email, password} = formData;
+            await loginWithEmailAndPassword( email, password )
+            navigate("/");
+        } catch (err) {
+            console.log(err)
+        }
+    };
+    
 
     const handleSignWithGoogle = async () => {
         await signInWithGoogle()
+        navigate("/");
     };
+
+    const handleOnChange = (event) => {
+        const { name, value } = event.target;
+          setFormData({
+            ...formData,
+            [name]: value
+          })
+        };
+       
 
     return(
         <div className={`d-flex justify-content-evenly flex-wrap align-items-center ${styles.loginContainer}`}>
@@ -21,11 +53,11 @@ export const Login = () => {
                 <form>
                     <div className="mb-3">
                         <label className={`form-label`}>Correo</label>
-                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" aria-describedby="emailHelp"/>
+                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" aria-describedby="emailHelp" placeholder="nombre@gmail.com" name="email" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-4">
                         <label className={`form-label`}>Contraseña</label>
-                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1"/>
+                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" placeholder="*******" name="password" onChange={handleOnChange}/>
                     </div>
                     <button type="submit" className={`btn btn-primary ${styles.button1}`}>Iniciar</button>
                 </form>

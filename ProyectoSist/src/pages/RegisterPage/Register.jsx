@@ -11,8 +11,10 @@ export const Register = () => {
 
     const [formData, setFormData] = useState({
         name: "",
+        lasName: "",
         email: "",
         password: "",
+        tipoUsuario: "",
     });
 
     const handleSignWithGoogle = async () => {
@@ -31,8 +33,8 @@ export const Register = () => {
     const onSubmit = async (event) => {
         try{
           event.preventDefault();
-          const {email, password, name} = formData;
-          await registerWithEmailAndPassword({ email, password, name});
+          const {email, password, name, tipoUsuario} = formData;
+          await registerWithEmailAndPassword({ email, password, name, tipoUsuario});
           navigate("/");
         } catch (err) {
           console.log(err)
@@ -53,33 +55,29 @@ export const Register = () => {
                 <form className={styles.formFormat}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name"/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" placeholder="John" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Apellido</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="lastName"/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputLastName" name="lastName" placeholder="Doe" onChange={handleOnChange}/>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp"/>
+                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="JohnDoe@gmail.com" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
-                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password"/>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Confirmar contraseña</label>
-                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1"/>
+                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" placeholder="*******" onChange={handleOnChange}/>
                     </div>
                     
-                    <div class="input-group mb-3 d-flex justify-content-evenly">
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" />
+                    <div className="input-group mb-3 d-flex justify-content-evenly">
+                        <div className="input-group-text">
+                            <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" />
                             <label className="ms-2">Paciente</label>
                         </div>
-                        <div class="input-group-text">
-                            <input class="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
+                        <div className="input-group-text">
+                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
                             <label className="ms-2">Doctor</label>
                         </div>
                     </div>
@@ -93,7 +91,7 @@ export const Register = () => {
                         <div className={styles.division}></div>
                     </div>
 
-                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary mt-2 py-2 mb-5 ${styles.button2}`}>Continuar con <i class="fa-brands fa-google"></i>oogle</button>
+                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary mt-2 py-2 mb-5 ${styles.button2}`}>Continuar con <i className="fa-brands fa-google"></i>oogle</button>
                     
                 </form>                    
             </div>

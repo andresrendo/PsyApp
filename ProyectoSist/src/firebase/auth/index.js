@@ -17,13 +17,15 @@ import { auth, googleProvider } from "../config";
     }
   };
   
-  export const registerWithEmailAndPassword = async ({email, password, name}) => {
+  export const registerWithEmailAndPassword = async ({email, password, name, lastName ,tipoUsuario}) => {
     try {
-      const result = await createUserWithEmailAndPassword(auth, email, password);
+      const result = await createUserWithEmailAndPassword(auth, email, password, name, lastName, tipoUsuario);
       const { uid } = result.user;
       const body = {
         name,
-        email
+        email,
+        lastName,
+        tipoUsuario,
       }
       await createUserProfile({userId: uid, data: body});
   

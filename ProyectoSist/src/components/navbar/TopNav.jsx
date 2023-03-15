@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'
 import { useUser } from '../../context/UserContext';
-import { logout } from '../../firebase/auth-service.js';
+import { logout } from '../../firebase/auth/index.js';
 
 
 function TopNav() {

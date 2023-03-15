@@ -1,29 +1,43 @@
-import { useState } from "react";
-import { LOGIN_URL } from "../../constants/urls";
-import { signInWithGoogle } from "../../firebase/auth-service";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css"
+import { LOGIN_URL } from "../../constants/urls";
+import { HOME_URL } from "../../constants/urls";
+import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth/index";
+import { useState } from "react";
+
 
 export const Register = () => {
+    const navigate = useNavigate();
 
-    const [] = useState({
-        name: null,
-        email: null,
-        password: null,
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        password: "",
     });
 
     const handleSignWithGoogle = async () => {
-        await signInWithGoogle()
+        await signInWithGoogle();
+        navigate("/");
     };
 
     const handleOnChange = (event) => {
-        const {name, value} = event.target;
-        setFormData({...formData, [name]: value})
-    }
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+      };
 
-    const onSubmit = async(event) => {
-        event.preventDefault()
-        console.log(formData)
-    }
+    const onSubmit = async (event) => {
+        try{
+          event.preventDefault();
+          const {email, password, name} = formData;
+          await registerWithEmailAndPassword({ email, password, name});
+          navigate("/");
+        } catch (err) {
+          console.log(err)
+        }
+      };
 
     return(
 

@@ -9,6 +9,8 @@ import { HOME_URL, LOGIN_URL, REGISTER_URL } from './constants/urls';
 import './index.css';
 
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -22,3 +24,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </React.StrictMode>,
 )
+//<Route path = {CHAT_URL} element={<Chats /> }/>

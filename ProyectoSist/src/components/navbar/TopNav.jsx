@@ -2,20 +2,26 @@ import React, {useState} from 'react';
 import { LOGIN_URL, HOME_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
+import  logo_pic from './../../assets/logo.png'
+import { useUser } from '../../context/UserContext';
+import { logout } from '../../firebase/auth-service.js';
 
 
 function TopNav() {
+    const { user } = useUser();
+
+    const handleLogout = async () => {
+      console.log('logout');
+      await logout();
+    };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary bg-success">
+    <nav className={`navbar navbar-expand-lg ${styles.navbarColor}`} >
       <div className="container-fluid main-container">
 
-        <div className="left-side-navbar">
+        <div className="left-side-navbar" >
           <a className="navbar-brand" href={HOME_URL}>
-            <img src="https://w7.pngwing.com/pngs/3/863/png-transparent-yoga-vriksasana-meditating-physical-fitness-arm-sports.png" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"/>
+            <img src={logo_pic} alt="Logo" width="30" height="30" className="d-inline-block align-text-top me-2"/>
             PsyApp
           </a>
         </div>
@@ -39,9 +45,19 @@ function TopNav() {
               <li className="nav-item">
                 <a className="nav-link" href="#">Contacto</a>
               </li>
-              <Link to={LOGIN_URL}>
-                <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
-              </Link>
+
+              {!!user && (
+                <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
+              )}
+
+
+              {!user && (
+                <Link to={LOGIN_URL}>
+                  <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
+                </Link>
+              )}
+                
+
             </ul>
           </div>
 

@@ -7,21 +7,65 @@ body {
     object-fit: cover;
 }
 
+.registerTitle {
+    color: #0E4A67;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 54px;
+}
+
+.input {
+    border: 2px solid #207198;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+    height: 45px;
+}
+
 .formFormat  {
     width: 380px;
 }
 
 .registerButton {
+    background: 
+        linear-gradient(271.15deg, #8D4C98 7.64%, rgba(141, 76, 152, 0.71) 90.68%),
+        linear-gradient(0deg, #EE5757, #EE5757);
+
+    border-radius: 10px;
+    border: none;
     width: 380px;
-    background-color: #8D4C98;
+    height: 45px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.registerButton:hover {
+    background: 
+        linear-gradient(21.15deg, #8D4C98 18.64%, rgba(141, 76, 152, 0.493) 70.68%),
+        linear-gradient(184deg, #EE5757, #EE5757);
+    border-radius: 15px;
 }
 
 .anchor {
     color: #FB724C;
+    text-decoration: none;
 }
 
 .button2 {
-    background-color: white;
+    background-color: #E3F1FE;
+    border: 1px solid #207198;
+    border-radius: 10px;
     width: 380px;
-    color: black;
+    height: 45px;
+    color: #207198;
+}
+
+.button2:hover {
+    background-color: #207198;
+    border-radius: 15px;
+}
+
+.division {
+    width: 100px;
+    height: 1px;
+    background-color: #0E4A67;
 }

@@ -5,7 +5,7 @@ import { db } from '../config';
 export async function createUserProfile({userId, data}) {
     try{
         const docRef = doc(db, 'users', String(userId));
-        await setDoc(docRef, data);
+        return await setDoc(docRef, data);
     } catch (err) {
         console.log(err)
     }

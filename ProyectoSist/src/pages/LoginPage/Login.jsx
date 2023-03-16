@@ -50,7 +50,7 @@ export const Login = () => {
                 {/* <Link to={REGISTER_URL}>¿No tienes cuenta?{" "} <span>Registrate</span></Link> */}
                 <span>¿No tienes cuenta? <a href={REGISTER_URL} className={styles.anchor}>Registrate aqui{" "}</a></span>
                 <h2 className={`mt-3 mb-3 ${styles.loginTitle}`}>Iniciar sesión</h2>
-                <form>
+                <form onSubmit={onSubmit}>
                     <div className="mb-3">
                         <label className={`form-label`}>Correo</label>
                         <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" aria-describedby="emailHelp" placeholder="nombre@gmail.com" name="email" onChange={handleOnChange}/>
@@ -68,7 +68,7 @@ export const Login = () => {
                         <div className={styles.division}></div>
                     </div>
 
-                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary pb-2 ${styles.button2}`}>Continuar con <i class="fa-brands fa-google"></i>oogle</button>
+                    <button type="button" onClick={handleSignWithGoogle} className={`btn btn-secondary pb-2 ${styles.button2}`}>Continuar con <i className="fa-brands fa-google"></i>oogle</button>
 
             </div>
         </div>

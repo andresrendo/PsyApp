@@ -1,5 +1,6 @@
 import { signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, googleProvider } from "../config";
+import { createUserProfile } from "../users/user-service";
 
   // HANDLE SING IN OR REGISTER USING GOOGLE PROVIDER
   export const signInWithGoogle = async () => {
@@ -26,6 +27,7 @@ import { auth, googleProvider } from "../config";
         email,
         lastName,
         tipoUsuario,
+        password,
       }
       await createUserProfile({userId: uid, data: body});
   

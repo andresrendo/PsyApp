@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { LOGIN_URL, HOME_URL } from '../../constants/urls';
+import { LOGIN_URL, HOME_URL, BUSCAR_DOCTOR_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'
 import { useUser } from '../../context/UserContext';
-import { logout } from '../../firebase/auth-service.js';
+import { logout } from '../../firebase/auth/index.js';
 
 
 function TopNav() {
@@ -37,7 +37,7 @@ function TopNav() {
                 <a className="nav-link active" aria-current="page" href={HOME_URL}>Inicio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Doctores</a>
+                <a className="nav-link" href="/buscar_doctor">Doctores</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Agenda tu cita</a>

@@ -1,10 +1,13 @@
 import { getDoc, doc, collection, getDocs} from 'firebase/firestore';
-import React, { useEffect, useState } from 'react'
+import { DOCTOR_PROFILE_URL } from '../../constants/urls';
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import { db } from '../../firebase/config';
 import styles from "./SearchDoctor.module.css"
+import { Link } from 'react-router-dom';
 
 
 
@@ -43,8 +46,11 @@ export const SearchDoctor = () => {
                 <Card.Body>
                   <Card.Title> {list.nombre}</Card.Title>
                   <Card.Text>{list.descripcion}</Card.Text>
-                  <button variant="primary">Go somewhere</button>
+                    <Link to={DOCTOR_PROFILE_URL} state={{data: list}}>
+                        <Button variant="primary">Ver detalles</Button>
+                    </Link>
                 </Card.Body>
+
               </Card> 
             ))}
             

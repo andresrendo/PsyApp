@@ -48,13 +48,13 @@ function TopNav() {
 
 
               {!!user && (
-                <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
+                <button onClick={handleLogout} className={`btn mx-4 ${styles.button1}`} type="button" >Salir</button>
               )}
 
 
               {!user && (
                 <Link to={LOGIN_URL}>
-                  <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
+                  <button className={`btn mx-4 ${styles.button1}`} type="submit" >Iniciar sesión</button>
                 </Link>
               )}
                 

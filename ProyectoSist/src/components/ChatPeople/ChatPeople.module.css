@@ -1,0 +1,16 @@
+.container {
+    height: 80px;
+    border-bottom: 1px solid rgb(105, 101, 101);
+}
+
+.container:hover {
+    background-color: rgb(105, 101, 101);
+}
+
+.chatImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    object-fit: cover;
+}

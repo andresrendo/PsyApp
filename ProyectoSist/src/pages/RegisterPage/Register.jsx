@@ -37,8 +37,25 @@ export const Register = () => {
           await registerWithEmailAndPassword({ email, password, name, lastName ,tipoUsuario, password});
           console.log(formData)
           navigate("/");
-        } catch (err) {
-          console.log(err)
+        } catch (error) {
+          let message;
+            switch (error.code) {
+                case "auth/email-already-in-use":
+                    message = "El correo electrónico ya está en uso.";
+                    break;
+                case "auth/invalid-email":
+                    message = "El correo electrónico no es válido.";
+                    break;
+                case "auth/operation-not-allowed":
+                    message = "La operación no está permitida.";
+                    break;
+                case "auth/weak-password":
+                    message = "La contraseña debe tener al menos 6 caracteres.";
+                    break;
+                default:
+                    message = "Ocurrió un error al intentar crear la cuenta.";
+            }
+            alert(message);
         }
       };
 

@@ -14,13 +14,31 @@ export const Login = () => {
       })
 
     const onSubmit = async (event) => {
+        event.preventDefault();
         try{
-            event.preventDefault();
             const {email, password} = formData;
             await loginWithEmailAndPassword( email, password )
             navigate("/");
-        } catch (err) {
-            console.log(err)
+        } catch (error) {
+            console.log(error);
+            let message;
+            switch (error.code) {
+                case "auth/invalid-email":
+                    message = "El correo electrónico no es válido.";
+                    break;
+                case "auth/user-disabled":
+                    message = "El usuario ha sido deshabilitado.";
+                    break;
+                case "auth/user-not-found":
+                    message = "El usuario no existe.";
+                    break;
+                case "auth/wrong-password":
+                    message = "La contraseña no es válida.";
+                    break;
+                default:
+                    message = "Ocurrió un error al intentar acceder.";
+            }
+            alert(message);
         }
     };
     

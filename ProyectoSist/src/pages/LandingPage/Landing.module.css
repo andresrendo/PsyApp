@@ -1,13 +1,7 @@
 .button2{
+    height: 48px;
+    width: 170px;
+    left: 0px;
+    border-radius: 10px;
     background-color: black;
-}
-
-.img1{
-    width: 350px;
-}
-
-.img2{
-    width: 350px;
-    height: 300px;
-    object-fit: scale-down;
 }

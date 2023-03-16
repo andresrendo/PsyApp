@@ -25,7 +25,7 @@ export function Chat() {
         });
         return () => unsubscribe();
 
-    }, []);
+    }, [messages]);
 
     return (
 
@@ -48,7 +48,7 @@ export function Chat() {
                         </div>
 
                         {messages && messages.map((message) => {
-                            <Message key={message.id} message={message} />
+                            return <Message key={message.id} message={message} />
                         })}
                         
                     </div>

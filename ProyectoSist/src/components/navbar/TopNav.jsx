@@ -11,7 +11,7 @@ function TopNav() {
     const { user } = useUser();
 
     const handleLogout = async () => {
-      console.log('logout');
+      console.log(user);
       await logout();
     };
 
@@ -37,7 +37,7 @@ function TopNav() {
                 <a className="nav-link active" aria-current="page" href={HOME_URL}>Inicio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Doctores</a>
+                <a className="nav-link" href="/buscar_doctor">Doctores</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Agenda tu cita</a>

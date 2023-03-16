@@ -1,0 +1,14 @@
+.footer {
+    background-color: #74C69D;
+    height: 100px;
+}
+
+.footerText {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.icons {
+    font-size: 20px;
+}

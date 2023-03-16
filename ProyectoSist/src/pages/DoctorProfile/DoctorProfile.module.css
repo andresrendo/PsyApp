@@ -1,0 +1,9 @@
+.profileContainer {
+    height: 100vh;
+    /* height: fit-content; */
+}
+
+.imgContainer {
+    width: 320px;
+    background-color: red;
+}

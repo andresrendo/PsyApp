@@ -11,7 +11,7 @@ export const Register = () => {
 
     const [formData, setFormData] = useState({
         name: "",
-        lasName: "",
+        lastName: "",
         email: "",
         password: "",
         tipoUsuario: "",
@@ -33,8 +33,9 @@ export const Register = () => {
     const onSubmit = async (event) => {
         try{
           event.preventDefault();
-          const {email, password, name, tipoUsuario} = formData;
-          await registerWithEmailAndPassword({ email, password, name, tipoUsuario});
+          const {email, password, name, lastName ,tipoUsuario} = formData;
+          await registerWithEmailAndPassword({ email, password, name, lastName ,tipoUsuario, password});
+          console.log(formData)
           navigate("/");
         } catch (err) {
           console.log(err)
@@ -52,7 +53,7 @@ export const Register = () => {
                 <h2 className={styles.registerTitle}>Registrarse</h2>
                 <p>¿Ya tienes una cuenta? <a href={LOGIN_URL} className={styles.anchor}>Accede aqui</a></p>
                 
-                <form className={styles.formFormat}>
+                <form className={styles.formFormat} onSubmit= {onSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
                         <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" placeholder="John" onChange={handleOnChange}/>

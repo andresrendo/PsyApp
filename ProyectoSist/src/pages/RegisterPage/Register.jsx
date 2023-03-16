@@ -14,7 +14,7 @@ export const Register = () => {
         lastName: "",
         email: "",
         password: "",
-        tipoUsuario: "paciente",
+        tipoUsuario: "",
     });
 
     const handleSignWithGoogle = async () => {

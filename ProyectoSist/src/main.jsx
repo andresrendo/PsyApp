@@ -5,8 +5,11 @@ import App from './App';
 import { Login } from "./pages/LoginPage/Login"
 import { Register } from "./pages/RegisterPage/Register"
 import { Layout } from './components/Layout/Layout';
-import { HOME_URL, LOGIN_URL, REGISTER_URL } from './constants/urls';
+import { SearchDoctor } from './pages/SearchDoctorPage/SearchDoctor';
+import { BUSCAR_DOCTOR_URL, HOME_URL, LOGIN_URL, REGISTER_URL } from './constants/urls';
 import './index.css';
+
+
 
 
 
@@ -19,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={HOME_URL} element={<App />}/>
           <Route path={LOGIN_URL} element={<Login />}/>
           <Route path={REGISTER_URL} element={<Register />}/>
+          <Route path= {BUSCAR_DOCTOR_URL} element={<SearchDoctor/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

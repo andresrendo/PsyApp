@@ -1,0 +1,11 @@
+.chat {
+    width: 90px;
+    height: 90px;
+    background-color: #9f57ac;
+    border-radius: 25px;
+}
+
+.chatImg {
+    width: 70px;
+    height: 70px;
+}

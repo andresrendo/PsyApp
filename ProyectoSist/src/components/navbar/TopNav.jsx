@@ -11,7 +11,7 @@ function TopNav() {
     const { user } = useUser();
 
     const handleLogout = async () => {
-      console.log('logout');
+      console.log(user);
       await logout();
     };
 
@@ -46,14 +46,24 @@ function TopNav() {
                 <a className="nav-link" href="#">Contacto</a>
               </li>
 
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+              {user.name != null && (
+=======
               {!!user && (
+>>>>>>> 7dd766cb3954c866c19ea9425a3cc803da0d8da9
                 <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
+=======
+              {!!user && (
+                <button onClick={handleLogout} className={`btn mx-4 ${styles.button1}`} type="button" >Salir</button>
+>>>>>>> chat
               )}
 
 
-              {!user && (
+              {user.name === null && (
                 <Link to={LOGIN_URL}>
-                  <button className="btn btn-outline-success" type="submit" >Iniciar sesión</button>
+                  <button className={`btn mx-4 ${styles.button1}`} type="submit" >Iniciar sesión</button>
                 </Link>
               )}
                 

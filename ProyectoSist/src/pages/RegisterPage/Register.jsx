@@ -1,9 +1,10 @@
+
+import { useState } from "react";
+import { LOGIN_URL } from "../../constants/urls";
+import { registerwithemailandpassword, signInWithGoogle } from "../../firebase/auth-service";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css"
-import { LOGIN_URL } from "../../constants/urls";
 import { HOME_URL } from "../../constants/urls";
-import { registerWithEmailAndPassword, signInWithGoogle } from "../../firebase/auth/index";
-import { useState } from "react";
 
 
 export const Register = () => {
@@ -30,6 +31,11 @@ export const Register = () => {
         })
       };
 
+    const onSubmit = async(event) => {
+        event.preventDefault()
+        console.log(formData)
+        await registerwithemailandpassword(formData.email, formData.password)
+    }
     const onSubmit = async (event) => {
         try{
           event.preventDefault();
@@ -73,24 +79,22 @@ export const Register = () => {
                 <form className={styles.formFormat} onSubmit= {onSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" placeholder="John" onChange={handleOnChange}/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Apellido</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputLastName" name="lastName" placeholder="Doe" onChange={handleOnChange}/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputLastName" name="lastName" onChange={handleOnChange}/>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="JohnDoe@gmail.com" onChange={handleOnChange}/>
+                        <input type="email" className="={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
-                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" placeholder="*******" onChange={handleOnChange}/>
+                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" onChange={handleOnChange}/>
                     </div>
-                    
                     <div className="input-group mb-3 d-flex justify-content-evenly">
-                        <div className="input-group-text">
                             <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" onChange={handleOnChange}/>
                             <label className="ms-2">Paciente</label>
                         </div>

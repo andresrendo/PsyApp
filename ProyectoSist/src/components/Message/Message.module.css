@@ -1,0 +1,19 @@
+.message {
+    border-radius: 15px;
+}
+
+.sent {
+    /* background-color: #395dff; */
+    background-color: #70B196;
+    color: white;
+    flex-direction: row-reverse;
+    text-align: end;
+}
+
+.received {
+    background-color: #e5e5ea;
+    color: black;
+    /* float: left; */
+    /* flex-direction: row;
+    text-align: start; */
+}

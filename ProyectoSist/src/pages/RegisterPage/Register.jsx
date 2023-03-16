@@ -25,8 +25,12 @@ export const Register = () => {
         lastName: "",
         email: "",
         password: "",
+<<<<<<< HEAD
         tipoUsuario: "",
 >>>>>>> chat
+=======
+        tipoUsuario: "paciente",
+>>>>>>> 7dd766cb3954c866c19ea9425a3cc803da0d8da9
     });
 
     const handleSignWithGoogle = async () => {
@@ -132,6 +136,7 @@ export const Register = () => {
                     <div className="input-group mb-3 d-flex justify-content-evenly">
                         <div className="input-group-text">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <input className="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" name="pacient" onChange={handleOnChange}/>
                             <label className="ms-1">Paciente</label>
                         </div>
@@ -144,10 +149,13 @@ export const Register = () => {
                         <button type="submit" onClick={onSubmit} className={`btn btn-primary py-2 ${styles.registerButton}`}>Registrarse</button>
 =======
                             <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" />
+=======
+                            <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" onChange={handleOnChange}/>
+>>>>>>> 7dd766cb3954c866c19ea9425a3cc803da0d8da9
                             <label className="ms-2">Paciente</label>
                         </div>
                         <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
+                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" onChange={handleOnChange}/>
                             <label className="ms-2">Doctor</label>
                         </div>
                     </div>

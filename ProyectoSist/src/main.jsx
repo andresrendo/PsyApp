@@ -16,7 +16,6 @@ import {AgendarPage} from './pages/AgendarPage/AgendarPage';
 
 
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>

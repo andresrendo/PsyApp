@@ -37,7 +37,9 @@ function TopNav() {
                 <a className="nav-link active" aria-current="page" href={HOME_URL}>Inicio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/buscar_doctor">Doctores</a>
+                <Link to={BUSCAR_DOCTOR_URL} className='nav-link'>
+                  Doctores
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Agenda tu cita</a>
@@ -46,27 +48,17 @@ function TopNav() {
                 <a className="nav-link" href="#">Contacto</a>
               </li>
 
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-              {user.name != null && (
-=======
+
               {!!user && (
->>>>>>> 7dd766cb3954c866c19ea9425a3cc803da0d8da9
                 <button onClick={handleLogout} className="btn btn-outline-success" type="button" >Salir</button>
-=======
-              {!!user && (
-                <button onClick={handleLogout} className={`btn mx-4 ${styles.button1}`} type="button" >Salir</button>
->>>>>>> chat
               )}
 
-
-              {user.name === null && (
+              {!user && (
                 <Link to={LOGIN_URL}>
-                  <button className={`btn mx-4 ${styles.button1}`} type="submit" >Iniciar sesión</button>
+                <button className={`btn mx-4 ${styles.button1}`} type="submit" >Iniciar sesión</button>
                 </Link>
               )}
-                
 
             </ul>
           </div>

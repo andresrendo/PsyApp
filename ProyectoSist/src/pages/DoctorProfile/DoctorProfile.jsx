@@ -4,23 +4,9 @@ import { useState } from "react";
 import { db } from '../../firebase/config';
 import { getDoc, doc, collection, getDocs} from 'firebase/firestore';
 
-export function DoctorProfile() {
-    const [lista, setLista] = useState([]);
+export function DoctorProfile(props) {
+    
 
-    //funcion para renderizar lista de doctores
-    const getLista = async () => {
-        try {
-            const querySnapshot = await getDocs(collection(db, 'doctores'))
-            const docs = []
-            querySnapshot.forEach((doc) => {
-                docs.push({...doc.data(), id:doc.id})
-            })
-            setLista(docs)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    getLista()
     return (
 
         <div className={`d-flex flex-wrap justify-content-around align-items-center ${styles.profileContainer}`}>
@@ -38,7 +24,7 @@ export function DoctorProfile() {
             </div>
 
             <div className={`bg-primary`}>
-                <h3>Amanda Sanz</h3>
+                <h3>Amanda</h3>
             </div>
 
             <div  className={`mx-3`}>

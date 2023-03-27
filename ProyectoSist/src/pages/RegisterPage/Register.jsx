@@ -31,11 +31,6 @@ export const Register = () => {
         })
       };
 
-    const onSubmit = async(event) => {
-        event.preventDefault()
-        console.log(formData)
-        await registerwithemailandpassword(formData.email, formData.password)
-    }
     const onSubmit = async (event) => {
         try{
           event.preventDefault();
@@ -79,27 +74,29 @@ export const Register = () => {
                 <form className={styles.formFormat} onSubmit= {onSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" onChange={handleOnChange}/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputName" name="name" placeholder="John" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Apellido</label>
-                        <input type="text" className={`form-control ${styles.input}`} id="InputLastName" name="lastName" onChange={handleOnChange}/>
+                        <input type="text" className={`form-control ${styles.input}`} id="InputLastName" name="lastName" placeholder="Doe" onChange={handleOnChange}/>
                     </div>
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className="={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" onChange={handleOnChange}/>
+                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="JohnDoe@gmail.com" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
-                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" onChange={handleOnChange}/>
+                        <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" placeholder="*******" onChange={handleOnChange}/>
                     </div>
+                    
                     <div className="input-group mb-3 d-flex justify-content-evenly">
-                            <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" onChange={handleOnChange}/>
+                        <div className="input-group-text">
+                            <input className="form-check-input mt-0" type="radio" id="paciente" value="Paciente" name="tipoUsuario" aria-label="paciente" />
                             <label className="ms-2">Paciente</label>
                         </div>
                         <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" onChange={handleOnChange}/>
+                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
                             <label className="ms-2">Doctor</label>
                         </div>
                     </div>

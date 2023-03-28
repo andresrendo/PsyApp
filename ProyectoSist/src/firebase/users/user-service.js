@@ -27,3 +27,20 @@ export async function getUserProfile(email) {
         return null;
     }
 }
+
+export async function getDoctorByEspecialidad(especialidad) {
+    const doctorQuery = query(
+        collection(db, 'doctores'),
+        where("especialidad", "==", especialidad))
+    const results = await getDocs(doctorQuery);
+    if(results.size > 0) {
+        const doctores = results.docs.map((item) => ({
+            ...item.data(),
+            id: item.id,
+        }));
+        
+        return doctores;
+    }else {
+        return null;
+    }
+}

@@ -82,12 +82,14 @@ export const Register = () => {
 
                     <div className="mb-3">
                         <label className="form-label">Correo</label>
-                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="example@email.com" onChange={handleOnChange}/>
+
+                        <input type="email" className={`form-control ${styles.input}`} id="InputEmail1" name="email" aria-describedby="emailHelp" placeholder="JohnDoe@gmail.com" onChange={handleOnChange}/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Contraseña</label>
                         <input type="password" className={`form-control ${styles.input}`} id="InputPassword1" name="password" placeholder="*******" onChange={handleOnChange}/>
                     </div>
+
 
                     <div className="input-group mb-3 d-flex justify-content-evenly">
                         <div className="input-group-text">
@@ -95,7 +97,7 @@ export const Register = () => {
                             <label className="ms-2">Paciente</label>
                         </div>
                         <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" onChange={handleOnChange}/>
+                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
                             <label className="ms-2">Doctor</label>
                         </div>
                     </div>

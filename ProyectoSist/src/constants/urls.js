@@ -5,4 +5,3 @@ export const DOCTOR_PROFILE_URL = '/profile/:doctorId'
 export const CHAT_URL = '/chat'
 export const AGENDAR_URL = '/agendar_cita'
 export const BUSCAR_DOCTOR_URL ='/buscar_doctor'
-

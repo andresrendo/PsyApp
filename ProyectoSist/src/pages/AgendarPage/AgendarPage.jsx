@@ -3,6 +3,8 @@ import styles from './AgendarPage.module.css'
 import { Button } from 'react-bootstrap'
 import { Calendar } from '../../components/Calendar/Calendar'
 import { Time } from '../../components/Time/Time';
+// import { PayButton } from '../../components/PayPal/payButton';
+import { PayPalButton } from "react-paypal-button-v2";
 
 
 export const AgendarPage = () => {
@@ -22,6 +24,26 @@ export const AgendarPage = () => {
             return true
         }
     }
+
+    const createOrder = (data, actions) => {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                currency_code: "USD",
+                value: "43.00" // el valor de la cita, en este caso $43
+              }
+            }
+          ]
+        });
+      };
+    
+      const onApprove = (data, actions) => {
+        return actions.order.capture().then(function(details) {
+          // Aquí puedes hacer lo que quieras después de que se complete el pago
+          alert('Cita creada exitosamente');
+        });
+      };
 
     const pay = () => {
         if (validate()) {
@@ -46,9 +68,15 @@ export const AgendarPage = () => {
                     <i className="fa-brands fa-twitter"></i>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <button type="button" className={`btn py-2 text-light ${styles.payButton}`} onClick={pay}>Realizar pago</button>
-                    <div><i className={`fa-brands fa-cc-paypal ms-2
-                    ${styles.paypal}`}></i></div>
+                    {/* <PayButton /> */}
+                    <PayPalButton
+                            createOrder={createOrder}
+                            onApprove={onApprove}
+                            className="paypal-button-container"
+                        />
+                    {/* <button type="button" className={`btn py-2 text-light ${styles.payButton}`} onClick={pay}>Realizar pago</button> */}
+                    {/* <div><i className={`fa-brands fa-cc-paypal ms-2
+                    ${styles.paypal}`}></i></div> */}
                 </div>
             </div>
             

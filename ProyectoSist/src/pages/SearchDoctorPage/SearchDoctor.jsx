@@ -86,7 +86,7 @@ export function SearchDoctor() {
                 <Card.Body>
                   <Card.Title> {list.nombre}</Card.Title>
                   <Card.Text>{list.descripcion}</Card.Text>
-                  <Link to={DOCTOR_PROFILE_URL} >
+                  <Link to={`/profile/${list.id}`} state={{data: list}}>
                     
                     <Button variant="primary" >Ver detalles</Button>\
                   </Link>
@@ -122,7 +122,7 @@ export function SearchDoctor() {
               <Card.Body>
                 <Card.Title> {list.nombre}</Card.Title>
                 <Card.Text>{list.descripcion}</Card.Text>
-                  <Link to={DOCTOR_PROFILE_URL} state={{data: list}}>
+                  <Link to={`/profile/${list.id}`} state={{data: list}}>
                       <Button variant="primary">Ver detalles</Button>
                   </Link>
               </Card.Body>
@@ -136,16 +136,3 @@ export function SearchDoctor() {
   )
   }
 }
-
-//const [data, setData] = useState({
-//  nombre:'',
-//  edad:'',
-//  especialidad:'',
-//  idioma:'',
-//  nacionalidad:'',
-//  formacion:'',
-//  foto:'',
-//  experiencia:'',
-//  descripcion:'',
-//  area_de_atencion:[],
-//})

@@ -3,16 +3,56 @@ import defaultProfile from "./../../assets/defaultProfile.png"
 import { useState } from "react";
 import { db } from '../../firebase/config';
 import { getDoc, doc, collection, getDocs} from 'firebase/firestore';
+import { Link, useLocation, useParams } from "react-router-dom";
+import { AGENDAR_URL } from "../../constants/urls";
 
 export function DoctorProfile(props) {
     
+    
+    const location = useLocation();
+    const data = location.state?.data;
+    const areas = data.area_de_atencion;
+
+    
+    //console.log(areas);
+    //console.log(data.nombre);
+    //console.log(location.state);
+
 
     return (
 
         <div className={`d-flex flex-wrap justify-content-around align-items-center ${styles.profileContainer}`}>
             
+            
+
+            <div className={`bg-primary`}>
+                <h3>{data.nombre}</h3>
+                <h4>Psicoterapeuta</h4>
+                <p>{data.experiencia}</p>
+                <h3>Areas de atencion</h3>
+                <ul>
+                {areas.map((especialidad) => {
+                    return (<li key={especialidad}> {especialidad}</li>)
+                })}
+                </ul>
+
+                <h4>Sobre mi</h4>
+                <p>{data.descripcion}</p>
+            </div>
+
+            <div  className={`mx-3`}>
+                <h5>Formacion academica</h5>
+                <p>{data.formacion}</p>
+                <h6>Idioma: {data.idioma}</h6>
+                <h6>Nacionalidad: {data.nacionalidad}</h6>
+                <h6>Edad: {data.edad}</h6>
+                <Link to={AGENDAR_URL} state={{data: data}}>
+                    <button type="submit" className="btn btn-primary mb-3">Agendar Cita</button>
+                </Link>
+            </div>
+            
             <div className={`mx-3`}>
-                <img src={defaultProfile} alt="" className={styles.imgContainer}/>
+                <img src={data.foto} alt="" className={styles.imgContainer}/>
                 <div className={`d-flex justify-content-center my-4`}>
                     Stars
                 </div>
@@ -23,13 +63,6 @@ export function DoctorProfile(props) {
                 </div>
             </div>
 
-            <div className={`bg-primary`}>
-                <h3>Amanda</h3>
-            </div>
-
-            <div  className={`mx-3`}>
-                <h5>Formacion academica</h5>
-            </div>
             
         </div>
     )

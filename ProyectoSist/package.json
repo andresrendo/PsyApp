@@ -9,7 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.14",
+    "@mui/x-date-pickers": "^6.0.3",
     "bootstrap": "^5.2.3",
+    "dayjs": "^1.11.7",
     "firebase": "^9.17.2",
     "mdb-react-ui-kit": "^5.1.0",
     "mdb-ui-kit": "^6.2.0",

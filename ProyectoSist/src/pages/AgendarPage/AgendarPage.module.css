@@ -1,0 +1,48 @@
+.image {
+    width: 300px;
+    height: 340px;
+    object-fit: cover;
+}
+
+.redes {
+    font-size: 40px;
+    color: black;
+}
+
+.payButton {
+    width: 100%;
+    background: 
+        linear-gradient(271.15deg, #8D4C98 7.64%, rgba(141, 76, 152, 0.71) 90.68%),
+        linear-gradient(0deg, #EE5757, #EE5757);
+
+    border-radius: 10px;
+    border: none;
+    height: 45px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.payButton:hover {
+    background: 
+        linear-gradient(21.15deg, #8D4C98 18.64%, rgba(141, 76, 152, 0.493) 70.68%),
+        linear-gradient(184deg, #EE5757, #EE5757);
+    border-radius: 15px;
+}
+
+.paypal {
+    font-size: 45px;
+}
+
+.orderContainer {
+    width: 350px;
+    background-color: #FBFBFB;
+    border-radius: 10px;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.profileContainer {
+    width: 350px;
+}

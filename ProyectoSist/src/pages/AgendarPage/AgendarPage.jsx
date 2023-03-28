@@ -45,11 +45,6 @@ export const AgendarPage = () => {
         });
       };
 
-    const pay = () => {
-        if (validate()) {
-            alert('Cita creada exitosamente')
-        }
-    }
 
     return (
         <div className='d-flex justify-content-evenly flex-wrap mt-5 align-items-center'>
@@ -74,9 +69,6 @@ export const AgendarPage = () => {
                             onApprove={onApprove}
                             className="paypal-button-container"
                         />
-                    {/* <button type="button" className={`btn py-2 text-light ${styles.payButton}`} onClick={pay}>Realizar pago</button> */}
-                    {/* <div><i className={`fa-brands fa-cc-paypal ms-2
-                    ${styles.paypal}`}></i></div> */}
                 </div>
             </div>
             

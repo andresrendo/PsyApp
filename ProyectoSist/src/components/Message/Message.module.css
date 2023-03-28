@@ -1,13 +1,12 @@
 .message {
-    border-radius: 15px;
+    border-radius: 5px;
+    width: fit-content;
 }
 
 .sent {
     /* background-color: #395dff; */
     background-color: #70B196;
     color: white;
-    flex-direction: row-reverse;
-    text-align: end;
 }
 
 .received {

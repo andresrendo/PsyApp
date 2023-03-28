@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { LOGIN_URL, HOME_URL, CONTACT_US_URL, BUSCAR_DOCTOR_URL } from '../../constants/urls';
+import { LOGIN_URL, HOME_URL, CONTACT_US_URL, BUSCAR_DOCTOR_URL, AGENDAR_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'
@@ -42,7 +42,9 @@ function TopNav() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Agenda tu cita</a>
+                <Link to={AGENDAR_URL} className="nav-link">
+                  Agenda tu cita
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href={CONTACT_US_URL}>Contacto</a>

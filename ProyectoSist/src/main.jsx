@@ -13,7 +13,7 @@ import './index.css';
 import {AgendarPage} from './pages/AgendarPage/AgendarPage';
 import AboutUs from './pages/AboutUsPage/AboutUs';
 import ContactUs from './pages/ContactUs/ContactUs';
-
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 
 
 
@@ -26,10 +26,26 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={HOME_URL} element={<App />}/>
           <Route path={LOGIN_URL} element={<Login />}/>
           <Route path={REGISTER_URL} element={<Register />}/>
-          <Route path= {BUSCAR_DOCTOR_URL} element={<SearchDoctor/>}/>
-          <Route path={DOCTOR_PROFILE_URL} element={<DoctorProfile/>}/>
-          <Route path={CHAT_URL} element={<Chat />}/>
-          <Route path = {AGENDAR_URL} element={<AgendarPage/>}/>
+          <Route path= {BUSCAR_DOCTOR_URL} element={
+            <PrivateRoute>
+              <SearchDoctor/>
+            </PrivateRoute>
+          }/>
+          <Route path={DOCTOR_PROFILE_URL} element={
+            <PrivateRoute>
+              <DoctorProfile/>
+            </PrivateRoute>
+          }/>
+          <Route path={CHAT_URL} element={
+            <PrivateRoute>
+              <Chat />
+            </PrivateRoute>
+          }/>
+          <Route path = {AGENDAR_URL} element={
+            <PrivateRoute>
+              <AgendarPage/>
+            </PrivateRoute>
+          }/>
           <Route path = {ABOUT_US_URL} element={<AboutUs/>}/>
           <Route path = {CONTACT_US_URL} element={<ContactUs/>}/>
         </Route>

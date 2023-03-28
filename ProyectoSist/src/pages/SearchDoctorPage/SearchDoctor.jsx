@@ -88,7 +88,7 @@ export function SearchDoctor() {
                   <Card.Text>{list.descripcion}</Card.Text>
                   <Link to={DOCTOR_PROFILE_URL} >
                     
-                    <Button variant="primary" >Ver detalles</Button>\
+                    <Button variant="primary" >Ver detalles</Button>
                   </Link>
                 </Card.Body>
 

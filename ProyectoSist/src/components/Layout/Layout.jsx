@@ -3,8 +3,12 @@ import TopNav from "../navbar/TopNav";
 import Footer from "../Footer/Footer";
 import { UserContextProvider } from "../../context/UserContext";
 import { ChatBtn } from "../ChatBtn/ChatBtn";
+import { useUser } from "../../context/UserContext";
+
 
 export function Layout() {
+    const user = useUser();
+
     return (
         <UserContextProvider>
             <main>
@@ -15,7 +19,7 @@ export function Layout() {
                 </section>
 
                 <ChatBtn />
-
+                
                 <Footer />
             </main>
         </UserContextProvider>

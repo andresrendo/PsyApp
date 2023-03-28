@@ -1,9 +1,37 @@
 .profileContainer {
-    height: 100vh;
-    /* height: fit-content; */
+    background-color: #f5f5f570;
+    border-radius: 15px;
+    width: 350px;
 }
 
 .imgContainer {
-    width: 320px;
-    background-color: red;
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+}
+
+.formacionCont {
+    width: 340px;
+}
+
+.btn1 {
+    background: 
+        linear-gradient(271.15deg, #8D4C98 7.64%, rgba(141, 76, 152, 0.71) 90.68%),
+        linear-gradient(0deg, #EE5757, #EE5757);
+
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: white;
+}
+
+.btn1:hover {
+    background: 
+        linear-gradient(21.15deg, #8D4C98 18.64%, rgba(141, 76, 152, 0.493) 70.68%),
+        linear-gradient(184deg, #EE5757, #EE5757);
+    border-radius: 15px;
+    color: white;
 }

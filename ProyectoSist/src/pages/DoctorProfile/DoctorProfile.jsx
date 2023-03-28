@@ -21,11 +21,9 @@ export function DoctorProfile(props) {
 
     return (
 
-        <div className={`d-flex flex-wrap justify-content-around align-items-center ${styles.profileContainer}`}>
+        <div className={`d-flex flex-wrap justify-content-evenly align-items-center mt-5`}>
             
-            
-
-            <div className={`bg-primary`}>
+            <div className={`p-3 ${styles.profileContainer}`}>
                 <h3>{data.nombre}</h3>
                 <h4>Psicoterapeuta</h4>
                 <p>{data.experiencia}</p>
@@ -40,14 +38,14 @@ export function DoctorProfile(props) {
                 <p>{data.descripcion}</p>
             </div>
 
-            <div  className={`mx-3`}>
+            <div  className={`mx-3 ${styles.formacionCont}`}>
                 <h5>Formacion academica</h5>
                 <p>{data.formacion}</p>
                 <h6>Idioma: {data.idioma}</h6>
                 <h6>Nacionalidad: {data.nacionalidad}</h6>
                 <h6>Edad: {data.edad}</h6>
                 <Link to={AGENDAR_URL} state={{data: data}}>
-                    <button type="submit" className="btn btn-primary mb-3">Agendar Cita</button>
+                    <button type="submit" className={`btn mt-3 ${styles.btn1}`}>Agendar Cita</button>
                 </Link>
             </div>
             

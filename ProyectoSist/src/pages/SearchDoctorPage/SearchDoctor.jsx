@@ -38,14 +38,14 @@ export function SearchDoctor() {
     //funcion para renderizar lista de doctores
     const getLista = async () => {
         try {
-          setLoading(true)
+            setLoading(true)
             const querySnapshot = await getDocs(collection(db, 'doctores'))
             const docs = []
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id:doc.id})
             })
             setLista(docs)
-            setLoading(false)
+            //setLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -64,18 +64,11 @@ export function SearchDoctor() {
       } catch (error) {
       }
     }
-    
+   
   if (Doctores && Doctores.length > 0){
     return (
-      <div className='d-flex justify-content-evenly flex-wrap d-flex'>
-
-      {isLoading && (
-        <div>
-          <Cargando />
-        </div>
-      )}
+      <div className='d-flex justify-content-around flex-wrap d-flex'>
       
-      {!isLoading && (
       <form className="row g-2">
         <div className="col-auto">
           <input type="text" readOnly className="form-control-plaintext" id="staticEmail2" defaultValue=""/>
@@ -84,9 +77,9 @@ export function SearchDoctor() {
           <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
         </div>
         <div className="col-auto">
-          <button type="submit" className="btn btn-primary mb-3" onClick={onSubmit}>Buscar</button>
+          <button type="submit" className={`btn btn-primary mb-3 ${styles.btn1}`} onClick={onSubmit}>Buscar</button>
         </div>
-      </form> )}
+      </form>
       
         <Col xs={12} md={12} lg= {9}>
             
@@ -101,7 +94,7 @@ export function SearchDoctor() {
                   <Card.Text>{list.descripcion}</Card.Text>
                   <Link to={`/profile/${list.id}`} state={{data: list}}>
                     
-                    <Button variant="primary" >Ver detalles</Button>
+                    <button className={`btn ${styles.btn1}`} >Ver detalles</button>
                   </Link>
                 </Card.Body>
 
@@ -113,8 +106,8 @@ export function SearchDoctor() {
     </div> 
     );
   }else{
-    return( <div className='d-flex justify-content-evenly flex-wrap d-flex'>
-    <form className="row g-2">
+    return( <div className='d-flex justify-content-around flex-wrap d-flex'>
+    <form className="row g-2 my-4">
       <div className="col-auto">
         <input type="text" readOnly className="form-control-plaintext" id="staticEmail2" defaultValue=""/>
       </div>
@@ -122,7 +115,7 @@ export function SearchDoctor() {
         <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
       </div>
       <div className="col-auto">
-        <button type="submit" className="btn btn-primary mb-3" onClick={onSubmit}>Buscar</button>
+        <button type="submit" className={`btn mb-3 ${styles.btn1}`} onClick={onSubmit}>Buscar</button>
       </div>
     </form>
       <Col xs={12} md={12} lg= {9}>
@@ -136,7 +129,7 @@ export function SearchDoctor() {
                 <Card.Title> {list.nombre}</Card.Title>
                 <Card.Text>{list.descripcion}</Card.Text>
                   <Link to={`/profile/${list.id}`} state={{data: list}}>
-                      <Button variant="primary">Ver detalles</Button>
+                      <Button className={`btn ${styles.btn1}`}>Ver detalles</Button>
                   </Link>
               </Card.Body>
 

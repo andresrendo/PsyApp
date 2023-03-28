@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { LOGIN_URL, HOME_URL } from '../../constants/urls';
+import { LOGIN_URL, HOME_URL, BUSCAR_DOCTOR_URL} from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'

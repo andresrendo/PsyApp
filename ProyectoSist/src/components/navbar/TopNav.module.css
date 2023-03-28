@@ -10,7 +10,4 @@
 .button1:hover {
     background-color: #6f3b79;
     color: white;
-
-.text-link{
-    color: inherit;
-    text-decoration: inherit;
+}

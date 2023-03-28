@@ -46,7 +46,7 @@ export function SearchDoctor() {
             console.log(error)
         }
     }
-    //getLista()
+    getLista()
     
     //Funcion para buscar doctor
     const onSubmit = async (event) => {

@@ -28,15 +28,15 @@ function AboutUs(){
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 mb-5">
-                        <div className="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+                        <div className="bg-white rounded shadow-sm py-5 px-4"><img src="https://lh3.googleusercontent.com/a/AGNmyxbMEFyzPY-BRqceWCsVXIFoTkeW2cwv8FmnZKhV=s48-c" alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
                             <h5 className="mb-0">Andrés Rendo</h5><span className="small text-uppercase text-muted">Founder - Developer</span>
                             <p>Estudiante de Ingenieria de Sistemas en la Universidad Metropolitana de Venezuela.</p>
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 mb-5">
-                        <div className="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+                        <div className="bg-white rounded shadow-sm py-5 px-4"><img src="/src/assets/SebastianF.png" alt="" width="100" className="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
                             <h5 className="mb-0">Sebastián Márquez</h5><span className="small text-uppercase text-muted">Founder - Developer</span>
-                            <p>Estudiante de Ingenieria de Sistemas en la Universidad Metropolitana de Venezuela.</p>
+                            <p>Estudiante de Ingenieria de Sistemas en la Universidad Metropolitana de Venezuela. Me gusta hacer Tik-Toks con mi pana Santi Perez, AKA el "PAPA".</p>
                         </div>
                     </div>
                     <div className="col-xl-3 col-sm-6 mb-5">

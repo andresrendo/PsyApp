@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { LOGIN_URL, HOME_URL, CONTACT_US_URL, BUSCAR_DOCTOR_URL, AGENDAR_URL } from '../../constants/urls';
+import { LOGIN_URL, HOME_URL, CONTACT_US_URL, BUSCAR_DOCTOR_URL, AGENDAR_URL, PROFILE_URL } from '../../constants/urls';
 import { Link } from 'react-router-dom';
 import styles from './TopNav.module.css'
 import  logo_pic from './../../assets/logo.png'
@@ -49,7 +49,11 @@ function TopNav() {
               <li className="nav-item">
                 <a className="nav-link" href={CONTACT_US_URL}>Contacto</a>
               </li>
-
+              {!!user && (
+                <li className="nav-item">
+                  <a className="nav-link" href={PROFILE_URL}>Perfil</a>
+                </li>
+              )}
 
               {!!user && (
                 <button onClick={handleLogout} className={`btn mx-4 ${styles.button1}`} type="button" >Salir</button>

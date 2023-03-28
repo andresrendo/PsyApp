@@ -1,0 +1,12 @@
+.spinner {
+    width: 5rem;
+    height: 5rem;
+}
+
+.container {
+    height: 65vh;
+}
+
+.green {
+    background-color: green;
+}

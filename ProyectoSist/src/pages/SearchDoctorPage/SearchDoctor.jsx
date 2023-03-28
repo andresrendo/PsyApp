@@ -1,6 +1,6 @@
 import { getDoc, doc, collection, getDocs} from 'firebase/firestore';
 import { DOCTOR_PROFILE_URL } from '../../constants/urls';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -10,6 +10,7 @@ import styles from "./SearchDoctor.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { getDoctorByEspecialidad } from '../../firebase/users/user-service';
 import { async } from '@firebase/util';
+import { Cargando } from '../../components/Cargando/Cargando';
 
 
 
@@ -21,6 +22,7 @@ export function SearchDoctor() {
     });
 
     const [Doctores, setDoctores] = useState([]);
+    const [isLoading, setLoading] = useState(false)
 
 
     const handleOnChange = (event) => {
@@ -36,17 +38,21 @@ export function SearchDoctor() {
     //funcion para renderizar lista de doctores
     const getLista = async () => {
         try {
+          setLoading(true)
             const querySnapshot = await getDocs(collection(db, 'doctores'))
             const docs = []
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id:doc.id})
             })
             setLista(docs)
+            setLoading(false)
         } catch (error) {
             console.log(error)
         }
     }
-    //getLista()
+    useEffect(() => {
+      getLista()
+    }, [lista])
     
     //Funcion para buscar doctor
     const onSubmit = async (event) => {
@@ -61,8 +67,15 @@ export function SearchDoctor() {
     
   if (Doctores && Doctores.length > 0){
     return (
-      
       <div className='d-flex justify-content-evenly flex-wrap d-flex'>
+
+      {isLoading && (
+        <div>
+          <Cargando />
+        </div>
+      )}
+      
+      {!isLoading && (
       <form className="row g-2">
         <div className="col-auto">
           <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value=""/>
@@ -73,7 +86,7 @@ export function SearchDoctor() {
         <div className="col-auto">
           <button type="submit" className="btn btn-primary mb-3" onClick={onSubmit}>Buscar</button>
         </div>
-      </form>
+      </form> )}
       
         <Col xs={12} md={12} lg= {9}>
             
@@ -97,7 +110,7 @@ export function SearchDoctor() {
             
             </Row>
         </Col>
-    </div>
+    </div> 
     );
   }else{
     return( <div className='d-flex justify-content-evenly flex-wrap d-flex'>

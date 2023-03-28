@@ -46,9 +46,9 @@ export function SearchDoctor() {
             console.log(error)
         }
     }
-    //useEffect(() => {
-    //  //getLista()
-    //}, [])
+    useEffect(() => {
+      getLista()
+    }, [lista])
     
     //Funcion para buscar doctor
     const onSubmit = async (event) => {
@@ -67,7 +67,7 @@ export function SearchDoctor() {
       <div className='d-flex justify-content-evenly flex-wrap d-flex'>
       <form className="row g-2">
         <div className="col-auto">
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value=""/>
+          <input type="text" readOnly className="form-control-plaintext" id="staticEmail2" defaultValue=""/>
         </div>
         <div className="col-auto">
           <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
@@ -88,7 +88,7 @@ export function SearchDoctor() {
                 <Card.Body>
                   <Card.Title> {list.nombre}</Card.Title>
                   <Card.Text>{list.descripcion}</Card.Text>
-                  <Link to={DOCTOR_PROFILE_URL} >
+                  <Link to={`/profile/${list.id}`} state={{data: list}}>
                     
                     <Button variant="primary" >Ver detalles</Button>
                   </Link>
@@ -105,7 +105,7 @@ export function SearchDoctor() {
     return( <div className='d-flex justify-content-evenly flex-wrap d-flex'>
     <form className="row g-2">
       <div className="col-auto">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value=""/>
+        <input type="text" readOnly className="form-control-plaintext" id="staticEmail2" defaultValue=""/>
       </div>
       <div className="col-auto">
         <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
@@ -124,7 +124,7 @@ export function SearchDoctor() {
               <Card.Body>
                 <Card.Title> {list.nombre}</Card.Title>
                 <Card.Text>{list.descripcion}</Card.Text>
-                  <Link to={DOCTOR_PROFILE_URL} state={{data: list}}>
+                  <Link to={`/profile/${list.id}`} state={{data: list}}>
                       <Button variant="primary">Ver detalles</Button>
                   </Link>
               </Card.Body>

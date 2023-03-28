@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { LOGIN_URL } from "../../constants/urls";
 import { registerwithemailandpassword, signInWithGoogle } from "../../firebase/auth-service";
+import { registerWithEmailAndPassword } from "../../firebase/auth/index";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Register.module.css"
 import { HOME_URL } from "../../constants/urls";
@@ -56,6 +57,7 @@ export const Register = () => {
                     message = "Ocurrió un error al intentar crear la cuenta.";
             }
             alert(message);
+            console.log(error);
         }
       };
 

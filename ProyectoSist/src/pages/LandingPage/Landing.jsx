@@ -8,7 +8,7 @@ function Landing() {
   return (
     <><div className='d-flex justify-content-evenly flex-wrap mt-5 pt-3'>
       <div>
-        <img src="/src/assets/landing1.png" />
+        <img src={landing1} />
       </div>
       <div className="pt-5 px-5 mt-4">
         <h2>Obten la estabilidad que necesitas</h2>

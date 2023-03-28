@@ -99,7 +99,7 @@ export const Register = () => {
                             <label className="ms-2">Paciente</label>
                         </div>
                         <div className="input-group-text">
-                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" />
+                            <input className="form-check-input mt-0" type="radio" id="doctor" value="Doctor" name="tipoUsuario" aria-label="doctor" onChange={handleOnChange}/>
                             <label className="ms-2">Doctor</label>
                         </div>
                     </div>

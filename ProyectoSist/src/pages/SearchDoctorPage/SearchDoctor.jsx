@@ -1,6 +1,6 @@
 import { getDoc, doc, collection, getDocs} from 'firebase/firestore';
 import { DOCTOR_PROFILE_URL } from '../../constants/urls';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -46,7 +46,9 @@ export function SearchDoctor() {
             console.log(error)
         }
     }
-    //getLista()
+    //useEffect(() => {
+    //  //getLista()
+    //}, [])
     
     //Funcion para buscar doctor
     const onSubmit = async (event) => {

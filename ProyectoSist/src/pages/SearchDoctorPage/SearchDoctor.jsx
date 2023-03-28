@@ -62,18 +62,18 @@ export function SearchDoctor() {
   if (Doctores && Doctores.length > 0){
     return (
       
-      <div className='d-flex justify-content-evenly flex-wrap d-flex'>
-      <form className="row g-2">
-        <div className="col-auto">
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value=""/>
-        </div>
-        <div className="col-auto">
-          <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
-        </div>
-        <div className="col-auto">
-          <button type="submit" className="btn btn-primary mb-3" onClick={onSubmit}>Buscar</button>
-        </div>
-      </form>
+      <div className='d-flex justify-content-evenly flex-wrap'>
+        <form className="row g-2">
+          <div className="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value=""/>
+          </div>
+          <div className="col-auto">
+            <input className="form-control" type="text" placeholder="Nombre o especialidad" name= 'especialidad' onChange={handleOnChange} aria-label="default input example" />
+          </div>
+          <div className="col-auto">
+            <button type="submit" className="btn btn-primary mb-3" onClick={onSubmit}>Buscar</button>
+          </div>
+        </form>
       
         <Col xs={12} md={12} lg= {9}>
             

@@ -6,7 +6,6 @@ import Landing from './pages/LandingPage/Landing';
 
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <Landing/>

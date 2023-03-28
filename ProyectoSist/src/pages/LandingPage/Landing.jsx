@@ -5,7 +5,7 @@ import landing2 from './../../assets/landing2.png'
 
 function Landing() {
   return (
-    <><div className='d-flex justify-content-evenly flex-wrap'>
+    <><div className='d-flex justify-content-evenly flex-wrap mt-5 pt-3'>
       <div>
         <img src="https://img.freepik.com/vector-gratis/reunion-negocios-lluvia-ideas-equipo-personas-que-trabajan-oficina-comunicacion-corporativa-hombres-mujeres-sentados-negociando-estudiando_575670-2062.jpg?w=360" />
       </div>
